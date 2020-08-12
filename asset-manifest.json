@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/PokeDexMon/static/css/main.faf51d99.chunk.css",
-    "main.js": "/PokeDexMon/static/js/main.bbfbcc38.chunk.js",
-    "main.js.map": "/PokeDexMon/static/js/main.bbfbcc38.chunk.js.map",
+    "main.css": "/PokeDexMon/static/css/main.ed44c7cb.chunk.css",
+    "main.js": "/PokeDexMon/static/js/main.69cb1c66.chunk.js",
+    "main.js.map": "/PokeDexMon/static/js/main.69cb1c66.chunk.js.map",
     "runtime-main.js": "/PokeDexMon/static/js/runtime-main.da29e08b.js",
     "runtime-main.js.map": "/PokeDexMon/static/js/runtime-main.da29e08b.js.map",
     "static/css/2.11829350.chunk.css": "/PokeDexMon/static/css/2.11829350.chunk.css",
-    "static/js/2.461284ad.chunk.js": "/PokeDexMon/static/js/2.461284ad.chunk.js",
-    "static/js/2.461284ad.chunk.js.map": "/PokeDexMon/static/js/2.461284ad.chunk.js.map",
+    "static/js/2.68c78349.chunk.js": "/PokeDexMon/static/js/2.68c78349.chunk.js",
+    "static/js/2.68c78349.chunk.js.map": "/PokeDexMon/static/js/2.68c78349.chunk.js.map",
     "index.html": "/PokeDexMon/index.html",
-    "precache-manifest.5aca2e9d2841675568406c7eab9d0da9.js": "/PokeDexMon/precache-manifest.5aca2e9d2841675568406c7eab9d0da9.js",
+    "precache-manifest.cc49560a4f5774315c31e5dd6fc48584.js": "/PokeDexMon/precache-manifest.cc49560a4f5774315c31e5dd6fc48584.js",
     "service-worker.js": "/PokeDexMon/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/PokeDexMon/static/css/2.11829350.chunk.css.map",
-    "static/css/main.faf51d99.chunk.css.map": "/PokeDexMon/static/css/main.faf51d99.chunk.css.map",
-    "static/js/2.461284ad.chunk.js.LICENSE.txt": "/PokeDexMon/static/js/2.461284ad.chunk.js.LICENSE.txt",
+    "static/css/main.ed44c7cb.chunk.css.map": "/PokeDexMon/static/css/main.ed44c7cb.chunk.css.map",
+    "static/js/2.68c78349.chunk.js.LICENSE.txt": "/PokeDexMon/static/js/2.68c78349.chunk.js.LICENSE.txt",
     "static/media/background.jpg": "/PokeDexMon/static/media/background.4f90fdbf.jpg",
     "static/media/spinner.gif": "/PokeDexMon/static/media/spinner.796c0622.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.da29e08b.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.461284ad.chunk.js",
-    "static/css/main.faf51d99.chunk.css",
-    "static/js/main.bbfbcc38.chunk.js"
+    "static/js/2.68c78349.chunk.js",
+    "static/css/main.ed44c7cb.chunk.css",
+    "static/js/main.69cb1c66.chunk.js"
   ]
 }

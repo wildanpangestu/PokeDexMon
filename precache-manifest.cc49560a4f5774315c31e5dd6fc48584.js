@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5103d9b906064bcecb8a6642e1591c4e",
+    "revision": "055f1d460dca410775afe5e26077805f",
     "url": "/PokeDexMon/index.html"
   },
   {
-    "revision": "7d90eddfa9e162c6c8c6",
+    "revision": "b5a577d3a89054cdad36",
     "url": "/PokeDexMon/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "ccfb32e32f6592bd3acc",
-    "url": "/PokeDexMon/static/css/main.faf51d99.chunk.css"
+    "revision": "6bd90517215522a94db2",
+    "url": "/PokeDexMon/static/css/main.ed44c7cb.chunk.css"
   },
   {
-    "revision": "7d90eddfa9e162c6c8c6",
-    "url": "/PokeDexMon/static/js/2.461284ad.chunk.js"
+    "revision": "b5a577d3a89054cdad36",
+    "url": "/PokeDexMon/static/js/2.68c78349.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/PokeDexMon/static/js/2.461284ad.chunk.js.LICENSE.txt"
+    "url": "/PokeDexMon/static/js/2.68c78349.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ccfb32e32f6592bd3acc",
-    "url": "/PokeDexMon/static/js/main.bbfbcc38.chunk.js"
+    "revision": "6bd90517215522a94db2",
+    "url": "/PokeDexMon/static/js/main.69cb1c66.chunk.js"
   },
   {
     "revision": "7b70376ab3e36a5636d2",
