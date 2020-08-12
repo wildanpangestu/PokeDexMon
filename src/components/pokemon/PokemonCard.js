@@ -4,11 +4,33 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import spinner from "../pokemon/spinner.gif";
+import axios from "axios";
 
 const Thumbnail = styled.img`
   width: 5em;
   height: 5em;
 `;
+
+const TYPE_COLORS = {
+  bug: "B1C12E",
+  dark: "4F3A2D",
+  dragon: "755EDF",
+  electric: "FCBC17",
+  fairy: "F4B1F4",
+  fighting: "84817A",
+  fire: "E73B0C",
+  flying: "A3B3F7",
+  ghost: "6060B2",
+  grass: "74C236",
+  ground: "D3B357",
+  ice: "A3E7FD",
+  normal: "C8C4BC",
+  poison: "934594",
+  psychic: "ED4882",
+  rock: "B9A156",
+  steel: "B5B5C3",
+  water: "3295F6",
+};
 
 const Card = styled.div`
   opacity: 0.95;
@@ -43,9 +65,10 @@ export default class PokemonCard extends Component {
     pokemonIndex: "",
     imageLoading: true,
     overloadRequest: false,
+    types: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { name, url } = this.props;
 
     function pad(number, length) {
@@ -61,11 +84,14 @@ export default class PokemonCard extends Component {
       pokemonIndex,
       3
     )}.png`;
+    const pokemonRes = await axios.get(url);
+    const types = pokemonRes.data.types.map((type) => type.type.name);
 
     this.setState({
       name,
       imageUrl,
       pokemonIndex,
+      types,
     });
   }
 
@@ -74,7 +100,23 @@ export default class PokemonCard extends Component {
       <div className="col-md-3 col-sm-6 mb-5">
         <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
           <Card className="card">
-            <h5 className="card-header">{this.state.pokemonIndex}</h5>
+            <div className="card-header">
+              <div className="float-right">
+                {this.state.types.map((type) => (
+                  <span
+                    key={type}
+                    className="badge badge-pill mr-1"
+                    style={{
+                      backgroundColor: `#${TYPE_COLORS[type]}`,
+                      color: "white",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {type}
+                  </span>
+                ))}
+              </div>
+            </div>
             {this.state.imageLoading ? (
               <img
                 src={spinner}
@@ -85,7 +127,7 @@ export default class PokemonCard extends Component {
             <Thumbnail
               className="card-img-top rounded mx-auto mt-2"
               onLoad={() => this.setState({ imageLoading: false })}
-              onError={() => this.setState({ overloadRequest: true })}
+              // onError={() => this.setState({ overloadRequest: true })}
               src={this.state.imageUrl}
               style={
                 this.state.overloadRequest

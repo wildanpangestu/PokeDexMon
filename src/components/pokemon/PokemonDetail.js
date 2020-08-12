@@ -7,7 +7,7 @@ const TYPE_COLORS = {
   dragon: "755EDF",
   electric: "FCBC17",
   fairy: "F4B1F4",
-  fighting: "823551D",
+  fighting: "84817A",
   fire: "E73B0C",
   flying: "A3B3F7",
   ghost: "6060B2",
@@ -203,7 +203,7 @@ export default class PokemonDetail extends Component {
           <div className="card-header">
             <div className="row">
               <div className="col-5">
-                <h5>{this.state.pokemonIndex}</h5>
+                <h5>#{this.state.pokemonIndex}</h5>
               </div>
               <div className="col-7">
                 <div className="float-right">
@@ -214,13 +214,10 @@ export default class PokemonDetail extends Component {
                       style={{
                         backgroundColor: `#${TYPE_COLORS[type]}`,
                         color: "white",
+                        textTransform: "capitalize",
                       }}
                     >
-                      {type
-                        .toLowerCase()
-                        .split(" ")
-                        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-                        .join(" ")}
+                      {type}
                     </span>
                   ))}
                 </div>
@@ -236,12 +233,8 @@ export default class PokemonDetail extends Component {
                 />
               </div>
               <div className="col-md-9">
-                <h4 className="mx-auto">
-                  {this.state.name
-                    .toLowerCase()
-                    .split(" ")
-                    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-                    .join(" ")}
+                <h4 className="mx-auto" style={{ textTransform: "capitalize" }}>
+                  {this.state.name}
                 </h4>
                 <div className="row align-items-center">
                   <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
@@ -385,7 +378,7 @@ export default class PokemonDetail extends Component {
           </div>
           <hr />
           <div className="card-body">
-            <h5 class="card-title text-center">Profile</h5>
+            <h5 className="card-title text-center">Profile</h5>
             <div className="row">
               <div className="col-md-6">
                 <div className="row">
@@ -411,9 +404,9 @@ export default class PokemonDetail extends Component {
                     <h6 className="float-right">Gender Ratio:</h6>
                   </div>
                   <div className="col-6">
-                    <div class="progress">
+                    <div className="progress">
                       <div
-                        class="progress-bar"
+                        className="progress-bar"
                         role="progressbar"
                         style={{
                           width: `${this.state.genderRatioFemale}%`,
@@ -426,7 +419,7 @@ export default class PokemonDetail extends Component {
                         <small>{this.state.genderRatioFemale}</small>
                       </div>
                       <div
-                        class="progress-bar"
+                        className="progress-bar"
                         role="progressbar"
                         style={{
                           width: `${this.state.genderRatioMale}%`,
@@ -472,8 +465,8 @@ export default class PokemonDetail extends Component {
               </div>
             </div>
           </div>
-          <div class="card-footer text-muted">
-            Data From{" "}
+          <div className="card-footer text-muted">
+            Data supply{" "}
             <a
               href="https://pokeapi.co/"
               target="_blank"

@@ -9,3 +9,7 @@
 .navbar {
   background-color: #ff3838 !important;
 }
+
+body {
+  background-color: transparent !important;
+}
