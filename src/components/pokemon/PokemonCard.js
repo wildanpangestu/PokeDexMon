@@ -87,24 +87,30 @@ export default class PokemonCard extends Component {
       pokemonIndex,
       3
     )}.png`;
-    const source = axios.CancelToken.source();
-    const pokemonRes = await axios.get(url, {
-      cancelToken: source.token,
-    });
-    const types = pokemonRes.data.types.map((type) => type.type.name);
 
     if (this._isMounted) {
       this.setState({
         name,
         imageUrl,
         pokemonIndex,
-        types,
+        url,
       });
     }
   }
 
   componentWillUnmount() {
     this._isMounted = false;
+  }
+
+  async componentDidUpdate() {
+    await axios.get(this.state.url).then((res) => {
+      let types = res.data.types.map((type) => type.type.name);
+      if (this._isMounted) {
+        this.setState({
+          types,
+        });
+      }
+    });
   }
 
   render() {
@@ -139,7 +145,7 @@ export default class PokemonCard extends Component {
             <Thumbnail
               className="card-img-top rounded mx-auto mt-2"
               onLoad={() => this.setState({ imageLoading: false })}
-              // onError={() => this.setState({ overloadRequest: true })}
+              onError={() => this.setState({ overloadRequest: true })}
               src={this.state.imageUrl}
               style={
                 this.state.overloadRequest
