@@ -68,7 +68,10 @@ export default class PokemonCard extends Component {
     types: [],
   };
 
+  _isMounted = false;
+
   async componentDidMount() {
+    this._isMounted = true;
     const { name, url } = this.props;
 
     function pad(number, length) {
@@ -84,15 +87,24 @@ export default class PokemonCard extends Component {
       pokemonIndex,
       3
     )}.png`;
-    const pokemonRes = await axios.get(url);
+    const source = axios.CancelToken.source();
+    const pokemonRes = await axios.get(url, {
+      cancelToken: source.token,
+    });
     const types = pokemonRes.data.types.map((type) => type.type.name);
 
-    this.setState({
-      name,
-      imageUrl,
-      pokemonIndex,
-      types,
-    });
+    if (this._isMounted) {
+      this.setState({
+        name,
+        imageUrl,
+        pokemonIndex,
+        types,
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

@@ -1,0 +1,20 @@
+[
+  { "id": "1", "name": "bug" },
+  { "id": "2", "name": "dark" },
+  { "id": "3", "name": "dragon" },
+  { "id": "4", "name": "electric" },
+  { "id": "5", "name": "fairy" },
+  { "id": "6", "name": "fighting" },
+  { "id": "7", "name": "fire" },
+  { "id": "8", "name": "flying" },
+  { "id": "9", "name": "ghost" },
+  { "id": "10", "name": "grass" },
+  { "id": "11", "name": "ground" },
+  { "id": "12", "name": "ice" },
+  { "id": "13", "name": "normal" },
+  { "id": "14", "name": "poison" },
+  { "id": "15", "name": "psychic" },
+  { "id": "16", "name": "rock" },
+  { "id": "17", "name": "steel" },
+  { "id": "18", "name": "water" }
+]

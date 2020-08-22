@@ -50,7 +50,10 @@ export default class PokemonDetail extends Component {
     statBarWidth: 9,
   };
 
+  _isMounted = false;
+
   async componentDidMount() {
+    this._isMounted = true;
     const { pokemonIndex } = this.props.match.params;
 
     function pad(number, length) {
@@ -69,8 +72,12 @@ export default class PokemonDetail extends Component {
       3
     )}.png`;
 
+    const source = axios.CancelToken.source();
+
     // Get pokemon information
-    const pokemonRes = await axios.get(pokemonUrl);
+    const pokemonRes = await axios.get(pokemonUrl, {
+      cancelToken: source.token,
+    });
 
     const name = pokemonRes.data.name;
     let { hp, attack, defense, speed, specialAttack, specialDefense } = "";
@@ -165,14 +172,16 @@ export default class PokemonDetail extends Component {
 
       const hatchSteps = 255 * (res.data["hatch_counter"] + 1);
 
-      this.setState({
-        description,
-        genderRatioFemale,
-        genderRatioMale,
-        catchRate,
-        eggGroups,
-        hatchSteps,
-      });
+      if (this._isMounted) {
+        this.setState({
+          description,
+          genderRatioFemale,
+          genderRatioMale,
+          catchRate,
+          eggGroups,
+          hatchSteps,
+        });
+      }
     });
 
     this.setState({
@@ -194,6 +203,10 @@ export default class PokemonDetail extends Component {
       evs,
       themeColor,
     });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
