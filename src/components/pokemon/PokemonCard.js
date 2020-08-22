@@ -158,7 +158,7 @@ export default class PokemonCard extends Component {
             {this.state.overloadRequest ? (
               <h6 className="mx-auto">
                 <span className="badge badge-danger mt-2">
-                  Overload Image Request
+                  Can't Load Image
                 </span>
               </h6>
             ) : null}
